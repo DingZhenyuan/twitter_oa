@@ -108,6 +108,40 @@ class LogSystem {
     }
 }
 
+// Flatten Nested List Iterator
+class NestedIterator implements Iterator<Integer> {
+    List<Integer> lst;
+    int index;
+
+//    public NestedIterator(List<NestedInteger> nestedList) {
+//        lst = new ArrayList<>();
+//        index = 0;
+//        Covert(nestedList);
+//    }
+//
+//    private void Covert(List<NestedInteger> nestedList) {
+//        for (NestedInteger item : nestedList) {
+//            if (item.isInteger()) {
+//                lst.add(item.getInteger());
+//            } else {
+//                Covert(item.getList());
+//            }
+//        }
+//    }
+
+    @Override
+    public Integer next() {
+        return lst.get(index++);
+    }
+
+    @Override
+    public boolean hasNext() {
+        return index < lst.size();
+    }
+}
+
+
+
 public class Solution {
     // Minimal Genetic Mutation
     char[] choices = new char[] {'A', 'C', 'G', 'T'};
